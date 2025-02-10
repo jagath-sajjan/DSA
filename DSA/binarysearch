@@ -1,0 +1,21 @@
+def binS(arr,x,low,high):
+    if low < high:
+        mid = (low + high) // 2
+
+        if arr[mid] == x:
+            return mid
+        
+        elif arr[mid] > x:
+            return binS(arr, x, low, mid-1)
+        
+        else:
+            return binS(arr, x, mid + 1, high)
+        
+    else:
+        return -1    
+    
+arr = [2, 3, 4, 10, 40]
+x = 10
+
+result = binS(arr, x, 0, len(arr)-1)
+print(result)
